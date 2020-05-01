@@ -37,13 +37,13 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
-colorscheme minimalist
+colorscheme nordisk
 syntax enable
 set t_Co=256
 :map <C-n> :NERDTree
 :map <C-j> :m+1<CR>==
 :map <C-k> :m-2<CR>==
-set rnu
+set nu
 set autoindent
 set ai
 set termguicolors
