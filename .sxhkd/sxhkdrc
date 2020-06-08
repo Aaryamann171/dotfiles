@@ -9,6 +9,9 @@ super + Return
 # program launcher
 super + @space
 	dmenu_run
+#rofi
+super + alt + @space
+	rofi -show drun
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -21,6 +24,10 @@ super + Escape
 # quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
+
+#suspend
+super + alt + s
+	systemctl suspend
 
 # close and kill
 super + {_,shift + }w
