@@ -30,20 +30,27 @@ augroup END
 if has('syntax') && has('eval')
   packadd! matchit
 endif
+
 " Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'flazz/vim-colorschemes'
-Plug 'arcticicestudio/nord-vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
-colorscheme minimalist
+" Works with both enabled and disabled option.
+let g:nord_uniform_status_lines = 0
+colorscheme nord
+set background=dark
 syntax enable
 set t_Co=256
 :map <C-n> :NERDTree
+"moves the current line down by one line
 :map <C-j> :m+1<CR>==
+" moves the current line up by one line
 :map <C-k> :m-2<CR>==
-set rnu
+set rnu "relative numbering
 set autoindent
-set ai
 set termguicolors
+set nobackup 
+set noswapfile 
+set noundofile
