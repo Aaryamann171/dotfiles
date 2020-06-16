@@ -1,6 +1,6 @@
 configuration {
   show-icons: true;
-  font: "Source Code Pro 10";
+  font: "Lato Regular 10";
   drun-display-format: "{icon} {name}";
   display-run: " ";
   display-drun: " ";
@@ -14,7 +14,11 @@ configuration {
   fg: #ECEFF4;
 
   nord-blue-light: #88C0D0;
+  nord-blue-medium: #81A1C1;
+  nord-blue-dark: #5E81AC;
   nord-yellow: #EBCB8B;
+  nord-red: #BF616A;
+  nord-white: #ECEFF4;
 
   border: 0;
   lines: 12;
@@ -26,6 +30,7 @@ configuration {
 window {
   width: 30%;
   transparency: "real";
+  border-radius: 4px;
 }
 
 mainbox {
@@ -56,10 +61,10 @@ prompt {
   enabled: true;
   font: "SauceCodePro Nerd Font 12";
   padding: 12 0 0 12;
-  text-color: @nord-yellow;
+  text-color: @nord-white;
 }
 
 entry {
   padding: 12;
-  text-color: @nord-yellow;
+  text-color: @nord-white;
 }
