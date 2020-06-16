@@ -1,7 +1,7 @@
 # dotfiles
 Various config files customized with [Nord](https://github.com/arcticicestudio/nord) color scheme.
 
-######Contents
+### Contents
 - bspwm (window manager)
 - polybar (status bar)
 - rofi (application launcher)
