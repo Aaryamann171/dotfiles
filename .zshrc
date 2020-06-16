@@ -9,7 +9,7 @@ PATH="$HOME/my_scripts:$PATH"
 export PATH
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 
-ZSH_THEME="alanpeabody"
+ZSH_THEME="cloud"
 
 #fixes rotation
 alias fr='xrandr -o normal && exit'
