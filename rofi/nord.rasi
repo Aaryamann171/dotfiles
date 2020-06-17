@@ -1,0 +1,70 @@
+configuration {
+  show-icons: true;
+  font: "Lato Regular 10";
+  drun-display-format: "{icon} {name}";
+  display-run: " ";
+  display-drun: " ";
+  display-window: " ";
+  modi: "window,run,drun";
+}
+
+* {
+  background-color: #2E3440;
+  bg-alt: #3B4252;
+  fg: #ECEFF4;
+
+  nord-blue-light: #88C0D0;
+  nord-blue-medium: #81A1C1;
+  nord-blue-dark: #5E81AC;
+  nord-yellow: #EBCB8B;
+  nord-red: #BF616A;
+  nord-white: #ECEFF4;
+
+  border: 0;
+  lines: 12;
+  padding: 0;
+  margin: 0;
+  spacing: 0;
+}
+
+window {
+  width: 30%;
+  transparency: "real";
+  border-radius: 4px;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+listview {
+  columns: 1;
+}
+
+element {
+  padding: 12;
+  orientation: vertical;
+  text-color: @fg;
+}
+
+element selected {
+  background-color: @bg-alt;
+  text-color: @nord-blue-light;
+}
+
+inputbar {
+  background-color: @background;
+  children: [prompt, entry];
+}
+
+prompt {
+  enabled: true;
+  font: "SauceCodePro Nerd Font 12";
+  padding: 12 0 0 12;
+  text-color: @nord-white;
+}
+
+entry {
+  padding: 12;
+  text-color: @nord-white;
+}
