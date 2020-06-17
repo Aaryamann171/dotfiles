@@ -10,6 +10,5 @@ Various config files customized with [Nord](https://github.com/arcticicestudio/n
 - vim (editor)
 - zathura (pdf viewer)
 - zsh (shell)
-- spicetify (spotify customization)
 - redshift (night light filter)
 
