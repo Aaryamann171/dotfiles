@@ -1,6 +1,7 @@
-#! /bin/sh
+#!/usr/bin/zsh
 
 sxhkd &
+pidof bspswallow || bspswallow &
 bspc rule -r "*"
 
 bspc monitor HDMI-1-1 -d 1 2 3 4 5  
@@ -24,11 +25,7 @@ bspc rule -a Screenkey manage=off
 bspc rule -a Zathura state=tiled
 bspc rule -a * floating=on
 
-# Redshift
-pkill redshift
-redshift 2>&1 > /dev/null || notify "Failed to start redshift\!" --urgent
-
-$HOME/.config/polybar/launch.sh
+$HOME/.config/polybar/launch.sh &
 xrandr --output HDMI-1-1 --mode 1920x1080 --primary --left-of eDP-1-1
 
-feh --bg-fill $HOME/Downloads/others/walls/fr_light_nord.png
+feh --bg-fill ~/Pictures/walls/fr_light_nord.png
