@@ -78,21 +78,21 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %index%
+label-focused = %name%
 label-focused-background = ${colors.tertiary}
 label-focused-foreground = ${colors.foreground}
 label-focused-padding = 2
 
-label-occupied = %index%
+label-occupied = %name%
 label-occupied-background = ${colors.background-alt}
 label-occupied-foreground = ${colors.foreground}
 label-occupied-padding = 2
 
-label-urgent = %index%!
+label-urgent = %name%!
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-label-empty = %index%
+label-empty = %name%
 label-empty-foreground =  ${colors.foreground}
 label-empty-background = ${colors.background-alt}
 label-empty-padding = 2
@@ -280,8 +280,9 @@ format-discharging-background = ${colors.background-alt}
 format-discharging-foreground = ${colors.warning}
 format-discharging-padding = 5
 
+format-full-foreground = ${colors.foreground}
+format-full-background = ${colors.background-alt}
 format-full-padding = 5
-format-full-foreground = ${colors.success}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
