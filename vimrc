@@ -1,4 +1,5 @@
-set relativenumber
+set rnu
+set belloff=all
 set nohlsearch
 set autoindent
 set smartindent
@@ -18,7 +19,12 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
+Plug 'tpope/vim-commentary'
+Plug 'mattn/emmet-vim'
 call plug#end()
+
+colorscheme nord
+
 let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'active': {
@@ -32,7 +38,9 @@ let g:lightline = {
 
 " Works with both enabled and disabled option.
 let g:nord_uniform_status_lines = 0
-colorscheme nord
+"emmet leader
+let g:user_emmet_expandabbr_key = '<Tab>'
+let g:user_emmet_install_global = 0
 
 map <C-n> :NERDTree<CR>
 "moves the current line down by one line
@@ -43,4 +51,5 @@ map <C-l> :setlocal spell spelllang=en_us
 "copy to system clipboard
 vnoremap <C-c> "+y
 "paste from system clipboard
-map <C-v> "+p
+map <C-p> "+P
+autocmd FileType html,css EmmetInstall
