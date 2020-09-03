@@ -10,6 +10,7 @@ set noswapfile
 set t_Co=256
 set laststatus=2
 set clipboard^=unnamed,unnamedplus
+
 " Plugins
 call plug#begin('~/.vim/plugged')
 " Plug 'jiangmiao/auto-pairs'
@@ -17,6 +18,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'dikiaap/minimalist'
 Plug 'bluz71/vim-nightfly-guicolors'
 call plug#end()
@@ -27,13 +29,43 @@ colorscheme nord
 
 " Custom status line
 hi StatusLine ctermbg=235 ctermfg=254 guibg=#3B4252 guifg=#e4e4e4
-"emmet leader
+
+" emmet leader
 let g:user_emmet_expandabbr_key = '<Tab>'
 let g:user_emmet_install_global = 0
-"moves the current line down by one line
+
+" moves the current line down by one line
 map <C-j> :m+1<CR>
+
 " moves the current line up by one line
 map <C-k> :m-2<CR>
+
+" enable spellcheck
 map <F5> :setlocal spell! spelllang=en_us<CR>
-" copies to system clipboard
+
+" emmet for html,css
 autocmd FileType html,css EmmetInstall
+
+" Remove arrow keys in Command Mode
+cnoremap <Down> <Nop>
+cnoremap <Left> <Nop>
+cnoremap <Right> <Nop>
+cnoremap <Up> <Nop>
+
+" Remove arrow keys in Insert Mode
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+inoremap <Up> <Nop>
+
+" Remove arrow keys in Normal Mode
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+nnoremap <Up> <Nop>
+
+" Remove arrow keys in Visual Mode
+vnoremap <Down> <Nop>
+vnoremap <Left> <Nop>
+vnoremap <Right> <Nop>
+vnoremap <Up> <Nop>
