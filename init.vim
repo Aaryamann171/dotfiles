@@ -12,11 +12,7 @@ set t_Co=256
 set laststatus=2
 set clipboard^=unnamed,unnamedplus
 
-" Splits properly
-set splitbelow
-set splitright
-
-" Plugins
+" plugins
 call plug#begin('~/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
 Plug 'mattn/emmet-vim'
@@ -30,7 +26,7 @@ set termguicolors
 syntax enable
 colorscheme nord
 
-" Custom status line
+" custom status line
 hi StatusLine ctermbg=235 ctermfg=254 guibg=#3B4252 guifg=#ECEFF4
 
 " emmet leader
@@ -43,35 +39,51 @@ map <F5> :setlocal spell! spelllang=en_us<CR>
 " emmet for html,css
 autocmd FileType html,css EmmetInstall
 
-" Remove arrow keys in Command Mode
+" remove arrow keys in Command Mode
 cnoremap <Down> <Nop>
 cnoremap <Left> <Nop>
 cnoremap <Right> <Nop>
 cnoremap <Up> <Nop>
 
-" Remove arrow keys in Insert Mode
+" remove arrow keys in Insert Mode
 inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 inoremap <Up> <Nop>
 
-" Remove arrow keys in Normal Mode
+" remove arrow keys in Normal Mode
 nnoremap <Down> <Nop>
 nnoremap <Left> <Nop>
 nnoremap <Right> <Nop>
 nnoremap <Up> <Nop>
 
-" Remove arrow keys in Visual Mode
+" remove arrow keys in Visual Mode
 vnoremap <Down> <Nop>
 vnoremap <Left> <Nop>
 vnoremap <Right> <Nop>
 vnoremap <Up> <Nop>
 
 " moves the current line down by one line
-map <C-j> :m+1<CR>
+map <A-j> :m+1<CR>
 
 " moves the current line up by one line
-map <C-k> :m-2<CR>
+map <A-k> :m-2<CR>
 
-" escape insert mode using jj
-:imap jj <Esc>
+" escape insert mode using jk
+" :imap jk <Esc>
+
+" splits properly
+set splitbelow
+set splitright
+
+" remap splits navigation to jsut CTRL + hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" friendly split resize
+noremap <silent> <C-Left> :vertical resize +3<CR>
+noremap <silent> <C-Right> :vertical resize -3<CR>
+noremap <silent> <C-Up> :resize +3<CR>
+noremap <silent> <C-Down> :resize -3<CR>
