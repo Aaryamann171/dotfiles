@@ -64,13 +64,10 @@ vnoremap <Right> <Nop>
 vnoremap <Up> <Nop>
 
 " moves the current line down by one line
-map <A-j> :m+1<CR>
+map <C-A-j> :m+1<CR>
 
 " moves the current line up by one line
-map <A-k> :m-2<CR>
-
-" escape insert mode using jk
-" :imap jk <Esc>
+map <C-A-k> :m-2<CR>
 
 " splits properly
 set splitbelow
