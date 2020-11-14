@@ -12,14 +12,16 @@ set t_Co=256
 set laststatus=2
 set clipboard^=unnamed,unnamedplus
 
+" maps leader to SPACE
+map <Space> <Leader>
+
 " plugins
 call plug#begin('~/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
 Plug 'mattn/emmet-vim'
-Plug 'haishanh/night-owl.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'jiangmiao/auto-pairs'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 set termguicolors
@@ -34,7 +36,7 @@ let g:user_emmet_expandabbr_key = '<Tab>'
 let g:user_emmet_install_global = 0
 
 " enable spellcheck
-map <F5> :setlocal spell! spelllang=en_us<CR>
+map <Leader>l :setlocal spell! spelllang=en_us<CR>
 
 " emmet for html,css
 autocmd FileType html,css EmmetInstall
@@ -64,16 +66,16 @@ vnoremap <Right> <Nop>
 vnoremap <Up> <Nop>
 
 " moves the current line down by one line
-map <C-A-j> :m+1<CR>
+map <silent> <C-A-j> :m+1<CR>
 
 " moves the current line up by one line
-map <C-A-k> :m-2<CR>
+map <silent> <C-A-k> :m-2<CR>
 
 " splits properly
 set splitbelow
 set splitright
 
-" remap splits navigation to jsut CTRL + hjkl
+" remap splits navigation to just CTRL + hjkl
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -84,3 +86,9 @@ noremap <silent> <C-Left> :vertical resize +3<CR>
 noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize +3<CR>
 noremap <silent> <C-Down> :resize -3<CR>
+
+" remaps jj to esc
+:imap jj <Esc>
+
+" NERDTree toggle
+nmap <silent> <Leader>n :NERDTreeToggle<CR>
