@@ -4,6 +4,7 @@ Various config files customized with [Nord](https://github.com/arcticicestudio/n
 ### Contents
 - alacritty (terminal emulator)
 - bspwm (window manager)
+- range (file manager)
 - polybar (status bar)
 - rofi (application launcher)
 - sxhkd (general key binder)
