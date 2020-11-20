@@ -10,7 +10,10 @@ export PATH
 export PATH=/opt/firefox/firefox:$PATH
 
 # prompt
-ZSH_THEME="cloud"
+ZSH_THEME="sorin"
+
+# reloads zsh
+alias update='source ~/.zshrc'
 
 #fixes rotation
 alias fr='xrandr -o normal && exit'
@@ -45,5 +48,11 @@ bindkey -v
 alias mv="mv -iv"
 alias cp="cp -riv"
 alias mkdir="mkdir -vp"
+
+# plugins
+plugins=(git zsh-syntax-highlighting)
+
+# nord dir colors
+test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 
 source $ZSH/oh-my-zsh.sh

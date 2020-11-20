@@ -69,10 +69,10 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: "Source Code Pro"
+    family: "Roboto Mono"
     style: Regular
   bold:
-    family: "Source Code Pro"
+    family: "Roboto Mono"
     style: Bold
 
   # Italic font face
@@ -98,7 +98,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 11
+  size: 12
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -388,18 +388,18 @@ mouse_bindings:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # at once.
-key_bindings:
-  # (Windows, Linux, and BSD only)
-  - { key: P,        mods: Control,       action: Paste            }
-  - { key: Insert,   mods: Shift,         action: Paste            }
-  - { key: Slash,    mods: Control,       chars: "gc"              }
- #- { key: T,        mods: Control,       command: "alacritty"     }
-  - { key: Y,        mods: Control,       action: Copy             }
-  - { key: Key0,     mods: Control,       action: ResetFontSize    }
-  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
-  - { key: Add,      mods: Control,       action: IncreaseFontSize }
-  - { key: Subtract, mods: Control,       action: DecreaseFontSize }
-  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
+#key_bindings:
+#  # (Windows, Linux, and BSD only)
+#  - { key: P,        mods: Control,       action: Paste            }
+#  - { key: Insert,   mods: Shift,         action: Paste            }
+#  - { key: Slash,    mods: Control,       chars: "gc"              }
+# #- { key: T,        mods: Control,       command: "alacritty"     }
+#  - { key: Y,        mods: Control,       action: Copy             }
+#  - { key: Key0,     mods: Control,       action: ResetFontSize    }
+#  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
+#  - { key: Add,      mods: Control,       action: IncreaseFontSize }
+#  - { key: Subtract, mods: Control,       action: DecreaseFontSize }
+#  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
 
 debug:
   # Display the time it takes to redraw each frame.
