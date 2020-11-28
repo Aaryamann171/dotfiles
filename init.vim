@@ -22,11 +22,11 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
-set termguicolors
-syntax enable
 colorscheme nord
+set termguicolors
 
 " custom status line
 hi StatusLine ctermbg=235 ctermfg=254 guibg=#3B4252 guifg=#ECEFF4
@@ -88,7 +88,13 @@ noremap <silent> <C-Up> :resize +3<CR>
 noremap <silent> <C-Down> :resize -3<CR>
 
 " remaps jj to esc
-:imap jj <Esc>
+" :imap jj <Esc>
 
 " NERDTree toggle
 nmap <silent> <Leader>n :NERDTreeToggle<CR>
+
+" Start NERDTree in minimal UI mode (No help lines)
+let NERDTreeMinimalUI=1
+
+" hides ^G from view
+let g:NERDTreeNodeDelimiter = "\u00a0"
