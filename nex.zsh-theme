@@ -2,7 +2,7 @@
 
 if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
   MODE_INDICATOR="%{$fg_bold[red]%}❮%{$reset_color%}%{$fg[red]%}❮❮%{$reset_color%}"
-  local return_status="%{$fg[red]%}%(?..⏎)%{$reset_color%}"
+  local return_status="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
   PROMPT='%{$fg_bold[cyan]%}%c$(git_prompt_info) %(!.%{$fg_bold[red]%}#.%{$fg_bold[green]%}❯)%{$reset_color%} '
 
