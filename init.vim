@@ -11,6 +11,9 @@ set noswapfile
 set t_Co=256
 set laststatus=2
 set clipboard^=unnamed,unnamedplus
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 " maps leader to SPACE
 map <Space> <Leader>
