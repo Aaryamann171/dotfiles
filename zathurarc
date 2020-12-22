@@ -36,22 +36,28 @@ set recolor-keephue             "false"
 
 #+-----------------------------------------------+#
 
-#Toggle dark mode
+# toggle dark mode
 map <C-i> recolor
 
-#map f to fullscreen
+# map f to fullscreen
 unmap f
 map f toggle_fullscreen
 map [fullscreen] f toggle_fullscreen
 
-# Open document in fit-width mode by default
+# open document in fit-width mode by default
 set adjust-open "best-fit"
 
-#smooth scrolling placebo
+# smooth scrolling placebo
 set scroll-step 100
 
-#copy selection to clipboard
+# copy selection to clipboard
 set selection-clipboard clipboard
 
-#enable scrollbar
+# enable scrollbar
 set show-scrollbars "true"
+
+# use base name for title bar
+set window-title-basename "true"
+
+# use base name for status bar
+set statusbar-basename "true"
