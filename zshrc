@@ -73,4 +73,16 @@ plugins=(git)
 # nord dir colors
 # test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 
+# attaches tmux to the last session; creates a new session if none exists.
+alias t='tmux attach || tmux new-session'
+
+# attaches tmux to a session
+alias ta='tmux attach -t'
+
+# creates a new session
+alias tn='tmux new-session'
+
+# lists all ongoing sessions
+alias tl='tmux list-sessions'
+
 source $ZSH/oh-my-zsh.sh
