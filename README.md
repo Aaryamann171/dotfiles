@@ -3,8 +3,8 @@ Various config files customized with [Nord](https://github.com/arcticicestudio/n
 
 ### Contents
 - alacritty (terminal emulator)
-- bspwm (window manager)
-- range (file manager)
+- bspwm (tiling window manager)
+- ranger (file manager)
 - polybar (status bar)
 - rofi (application launcher)
 - sxhkd (general key binder)
@@ -13,3 +13,5 @@ Various config files customized with [Nord](https://github.com/arcticicestudio/n
 - zathura (pdf viewer)
 - zsh (shell)
 - redshift (night light filter)
+- mpv (media player)
+- `adiaphora` and `nex` (zsh prompts) 
