@@ -42,18 +42,19 @@ alias dashboard='google-chrome /home/oreo/dashboard/index.html'
 alias wrpy='python wifi_reset.py'
 alias wr='nmcli radio wifi off && figlet reseting wifi && sleep 2 && nmcli radio wifi on'
 
-#nvim alias
+# nvim alias
 alias v='nvim'
 alias vim='nvim'
+alias vi='nvim'
 
-#launches piskel
+# launches piskel
 alias piskel='/home/oreo/Piskel-0.14.0-64bits/piskel >/dev/null 2>&1'
 
-#toggle trackpad status
+# toggle trackpad status
 alias ttp=toggletrackpad
 
-#show colors
-showColors='for i in {1..256}; do print -P "%F{$i}Color : $i"; done;'
+# show colors
+alias showColors='for i in {1..256}; do print -P "%F{$i}Color : $i"; done;'
 
 # vim keybinds
 bindkey -v
@@ -67,6 +68,7 @@ alias mkdir="mkdir -vp"
 alias mcs="setxkbmap -option caps:escape"
 
 # plugins
+
 # plugins=(git zsh-syntax-highlighting)
 plugins=(git)
 
