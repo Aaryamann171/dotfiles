@@ -54,7 +54,7 @@ alias piskel='/home/oreo/Piskel-0.14.0-64bits/piskel >/dev/null 2>&1'
 alias ttp=toggletrackpad
 
 # show colors
-alias showColors='for i in {1..256}; do print -P "%F{$i}Color : $i"; done;'
+alias print256='for i in {1..256}; do print -P "%F{$i}Color : $i"; done;'
 
 # vim keybinds
 bindkey -v
