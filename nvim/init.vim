@@ -26,13 +26,18 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+Plug 'dikiaap/minimalist'
 call plug#end()
 
 colorscheme nord
 set termguicolors
 
 " custom status line
+" nord status line
 hi StatusLine ctermbg=235 ctermfg=254 guibg=#3B4252 guifg=#ECEFF4
+
+" minimalist status line
+" hi StatusLine ctermbg=235 ctermfg=254 guibg=#262626 guifg=#ECEFF4
 
 " emmet leader
 let g:user_emmet_expandabbr_key = '<Tab>'
@@ -101,6 +106,10 @@ let NERDTreeMinimalUI=1
 
 " hides ^G from view
 let g:NERDTreeNodeDelimiter = "\u00a0"
+
+" moving between buffers sequentially
+ nnoremap <C-k> gt<CR> 
+ nnoremap <C-j> gT<CR>
 
 " go to tab by number
 noremap <leader>1 1gt
