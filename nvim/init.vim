@@ -107,7 +107,7 @@ let NERDTreeMinimalUI=1
 " hides ^G from view
 let g:NERDTreeNodeDelimiter = "\u00a0"
 
-" moving between buffers sequentially
+" moving between tabs sequentially
  nnoremap <C-k> gt<CR> 
  nnoremap <C-j> gT<CR>
 
