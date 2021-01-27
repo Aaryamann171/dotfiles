@@ -23,10 +23,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
-Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
-colorscheme nord
+colorscheme default
 set background=dark
 
 " enable spellcheck
@@ -81,22 +80,11 @@ noremap <silent> <C-Down> :resize -3<CR>
 " NERDTree toggle
 nmap <silent> <Leader>n :NERDTreeToggle<CR>
 
-" Start NERDTree in minimal UI mode (No help lines)
+" start NERDTree in minimal UI mode (No help lines)
 let NERDTreeMinimalUI=1
 
 " hides ^G from view
 let g:NERDTreeNodeDelimiter = "\u00a0"
-
-" installs vim plug if not already installed
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-" moving between tabs sequentially
- nnoremap <C-k> gt<CR>
- nnoremap <C-j> gT<CR>
 
 " go to tab by number
 noremap <leader>1 1gt
@@ -109,3 +97,14 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
+
+" moving between tabs sequentially
+ nnoremap <C-k> gt<CR>
+ nnoremap <C-j> gT<CR>
+
+" installs vim plug if not already installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
