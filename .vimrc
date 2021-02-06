@@ -2,14 +2,13 @@ set nu
 set belloff=all
 set noruler
 set nohlsearch
+set t_Co=256
 set ic
 set autoindent
 set smartindent
 set nobackup 
 set noundofile
 set noswapfile 
-set t_Co=256
-set laststatus=2
 set clipboard^=unnamed,unnamedplus
 set tabstop=4
 set shiftwidth=4
@@ -20,19 +19,21 @@ map <Space> <Leader>
 
 " plugins
 call plug#begin('~/.vim/plugged')
+Plug 'tomasiser/vim-code-dark'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
 call plug#end()
 
-colorscheme default
-set background=dark
+" color scheme
+let g:codedark_conservative = 1
+colorscheme codedark
+
 
 " enable spellcheck
 map <Leader>l :setlocal spell! spelllang=en_us<CR>
 
-" remove arrow keys in Command Mode
-cnoremap <Down> <Nop>
+" remove arrow keys in Command Mode cnoremap <Down> <Nop>
 cnoremap <Left> <Nop>
 cnoremap <Right> <Nop>
 cnoremap <Up> <Nop>
@@ -86,6 +87,10 @@ let NERDTreeMinimalUI=1
 " hides ^G from view
 let g:NERDTreeNodeDelimiter = "\u00a0"
 
+" moving between tabs sequentially
+ nnoremap <C-k> gt<CR> 
+ nnoremap <C-j> gT<CR>
+
 " go to tab by number
 noremap <leader>1 1gt
 noremap <leader>2 2gt
@@ -98,16 +103,6 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
-" moving between tabs sequentially
- nnoremap <C-k> gt<CR>
- nnoremap <C-j> gT<CR>
-
 " maps jj to esc
 imap jj <esc>
 
-" installs vim plug if not already installed
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
