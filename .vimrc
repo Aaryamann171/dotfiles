@@ -26,6 +26,8 @@ Plug 'preservim/nerdtree'
 call plug#end()
 
 " color scheme
+set t_Co=256
+set t_ut=
 let g:codedark_conservative = 1
 colorscheme codedark
 
@@ -105,4 +107,10 @@ noremap <leader>0 :tablast<cr>
 
 " maps jj to esc
 imap jj <esc>
+
+" change cursor to block in normal mode
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
 
