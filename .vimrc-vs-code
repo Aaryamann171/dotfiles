@@ -35,3 +35,9 @@ noremap <leader>0 :tablast<cr>
 " moving between tabs sequentially
 nnoremap <C-k> gt<CR>
 nnoremap <C-j> gT<CR>
+
+" open new file
+nnoremap <C-n> :tabedit<CR>
+
+" close file in normal mode
+nnoremap <C-w> :q!<CR>
