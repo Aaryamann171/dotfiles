@@ -40,4 +40,4 @@ nnoremap <C-j> gT<CR>
 nnoremap <C-n> :tabedit<CR>
 
 " close file in normal mode
-nnoremap <C-w> :q!<CR>
+nnoremap <C-w> :q<CR>
