@@ -11,8 +11,10 @@ set ai
 set smartindent
 set clipboard^=unnamed,unnamedplus
 colorscheme default
-syntax enable
 set background=dark
+syntax on
+highlight Comment ctermfg=green
+highlight NonText ctermfg=245
 
 " maps leader to SPACE
 map <Space> <Leader>
