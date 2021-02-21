@@ -4,3 +4,4 @@ bind 'TAB:menu-complete'
 alias mv="mv -iv"
 alias cp="cp -riv"
 alias mkdir="mkdir -vp"
+alias gvim="C:\\\Program\ Files\ \(x86\)\\\Vim\\\vim82\\\gvim.exe"

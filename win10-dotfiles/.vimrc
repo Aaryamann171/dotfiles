@@ -11,8 +11,7 @@ set ic
 set ai
 set smartindent
 set clipboard^=unnamed,unnamedplus
-colorscheme default
-set background=dark
+colorscheme elflord
 syntax on
 highlight Comment ctermfg=green
 highlight NonText ctermfg=245
@@ -51,3 +50,12 @@ let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
+
+if has("gui_running")
+  set guifont=Consolas:h11:cANSI
+  colorscheme slate
+  set guioptions-=m  "menu bar
+  set guioptions-=T  "toolbar
+  set guioptions-=r  "scrollbar set background=dark
+endif
+
