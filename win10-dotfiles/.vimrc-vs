@@ -1,21 +1,7 @@
-set nocompatible
-set nu
 imap jj <esc>
-set belloff=all
-set t_vb=
 set nohlsearch
-set nobackup 
-set noundofile
-set noswapfile
 set ic
-set ai
-set smartindent
 set clipboard^=unnamed,unnamedplus
-colorscheme default
-set background=dark
-syntax on
-highlight Comment ctermfg=green
-highlight NonText ctermfg=245
 
 " maps leader to SPACE
 map <Space> <Leader>
@@ -46,8 +32,5 @@ nnoremap <C-j> gT<CR>
 " open new file
 nnoremap <C-n> :tabedit<CR>
 
-" change cursor to block in normal mode
-let &t_ti.="\e[1 q"
-let &t_SI.="\e[5 q"
-let &t_EI.="\e[1 q"
-let &t_te.="\e[0 q"
+" close file in normal mode
+nnoremap <C-w> :q<CR>
