@@ -1,14 +1,6 @@
-set nu
 imap jj <esc>
-set belloff=all
-set t_vb=
-set nohlsearch
 set ic
-set ai
-set smartindent
 set clipboard^=unnamed,unnamedplus
-colorscheme default
-set background=dark
 
 " maps leader to SPACE
 map <Space> <Leader>
