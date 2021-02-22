@@ -1,9 +1,9 @@
 # YouTube
-###name
+### name
 YouTube
-###keyword
+### keyword
 yt
-###url
+### url
 https://www.youtube.com/results?search_query=%s&page={startPage?}&utm_source=opensearch
 
 # Amazon India
