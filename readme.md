@@ -4,6 +4,8 @@ various config files
 ### Contents
 - `alacritty` (terminal emulator)
 - `bspwm` (tiling window manager)
+- `picom` (compositor)
+- `nitorgen`(desktop background browser and setter)
 - `mpv` (media player)
 - `vim` and `nvim` (editor)
 - `polybar` (status bar)
