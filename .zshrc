@@ -20,6 +20,7 @@ SPACESHIP_HOST_COLOR=cyan
 SPACESHIP_DIR_COLOR=green
 SPACESHIP_GIT_BRANCH_COLOR=yellow
 SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_PROMPT_SEPERATE_LINE=false
 SPACESHIP_CHAR_SUFFIX=" "
 SPACESHIP_NODE_SHOW=false
 SPACESHIP_EXEC_TIME_SHOW=false
@@ -42,11 +43,6 @@ alias dashboard='google-chrome /home/oreo/dashboard/index.html'
 alias wrpy='python wifi_reset.py'
 alias wr='nmcli radio wifi off && figlet reseting wifi && sleep 2 && nmcli radio wifi on'
 
-# nvim alias
-alias v='nvim'
-alias vim='nvim'
-alias vi='nvim'
-
 # launches piskel
 alias piskel='/home/oreo/Piskel-0.14.0-64bits/piskel >/dev/null 2>&1'
 
@@ -55,9 +51,6 @@ alias ttp=toggletrackpad
 
 # show colors
 alias print256='for i in {1..256}; do print -P "%F{$i}Color : $i"; done;'
-
-# vim keybinds
-bindkey -v
 
 # qol alias
 alias mv="mv -iv"
@@ -70,10 +63,8 @@ alias mcs="setxkbmap -option caps:escape"
 # plugins
 
 # plugins=(git zsh-syntax-highlighting)
-plugins=(git)
-
-# nord dir colors
-# test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
+plugins=(git zsh-vi-mode)
+ZVM_VI_ESCAPE_BINDKEY="jj"
 
 # attaches tmux to the last session; creates a new session if none exists.
 alias t='tmux attach || tmux new-session'
@@ -86,5 +77,8 @@ alias tn='tmux new-session'
 
 # lists all ongoing sessions
 alias tl='tmux list-sessions'
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 source $ZSH/oh-my-zsh.sh
