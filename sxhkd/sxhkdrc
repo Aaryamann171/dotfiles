@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	gnome-terminal
+	alacritty
 
 # program launcher
 super + @space
@@ -127,15 +127,22 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# quiting bspwm
 super + alt + Escape
 	bspc quit
+
 #decreases volume
 ctrl + F7
-	amixer -D pulse sset Master 5%-
+    amixer set Master 5%-
+
 #increases volume
 ctrl + F8
-	amixer -D pulse sset Master 5%+
+    amixer set Master 5%+
 
 # Take an screenshot
 ctrl + F10
 	~/.config/bspwm/misc/screenshot
+
+# move focused window to the next workspace and then switch to that workspace
+ctrl + shift + {Left,Right}
+    id=$(bspc query --nodes --node); bspc node --to-desktop {prev,next}; bspc desktop --focus next; bspc node --focus ${id}
