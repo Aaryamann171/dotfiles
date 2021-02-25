@@ -12,6 +12,7 @@ set clipboard^=unnamed,unnamedplus
 set tabstop=4
 set shiftwidth=4
 set expandtab
+setf dosini
 
 " maps leader to SPACE
 map <Space> <Leader>
