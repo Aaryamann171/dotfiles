@@ -2,7 +2,6 @@ set nu
 set belloff=all
 set noruler
 set nohlsearch
-set t_Co=256
 set ic
 set autoindent
 set smartindent
