@@ -12,7 +12,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-# Git-Bash Profile Windows Terminal
+# Windows Terminal Config
+
+### Git Bash Profile
+```json
 {
 "background" : "#1c1c1c",
 "tabColor" : "#1c1c1c",
@@ -30,3 +33,4 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "padding" : "0, 0, 0, 0",
 "snapOnInput" : true
 }
+```
