@@ -11,10 +11,21 @@ set ic
 set ai
 set smartindent
 set clipboard^=unnamed,unnamedplus
-colorscheme elflord
 syntax on
-highlight Comment ctermfg=green
-highlight NonText ctermfg=245
+
+" plugins
+call plug#begin('~/.vim/plugged')
+Plug 'tomasiser/vim-code-dark'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+call plug#end()
+
+" color scheme
+set t_Co=256
+set t_ut=
+let g:codedark_conservative = 1
+colorscheme codedark
 
 " maps leader to SPACE
 map <Space> <Leader>
@@ -53,7 +64,6 @@ let &t_te.="\e[0 q"
 
 if has("gui_running")
   set guifont=Consolas:h11:cANSI
-  colorscheme slate
   set guioptions-=m  "menu bar
   set guioptions-=T  "toolbar
   set guioptions-=r  "scrollbar set background=dark
