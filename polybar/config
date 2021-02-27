@@ -42,7 +42,7 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 0
 
-font-0 = fixed:pixelsize=10;1
+font-0 = InputMono-Regular:size=12;2
 
 modules-left = bspwm
 modules-right = pulseaudio wlan eth battery fuzzy-clock
@@ -94,7 +94,7 @@ label-empty-padding = 2
 
 [module/fuzzy-clock]
 type = custom/script
-exec = ~/scripts/fuzzy-clock
+exec = ~/code/my_scripts/fuzzy-clock
 format-foreground = ${colors.foreground}
 format-background = ${colors.background-alt}
 format-padding = 3

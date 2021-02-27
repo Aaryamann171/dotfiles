@@ -146,3 +146,6 @@ ctrl + F10
 # move focused window to the next workspace and then switch to that workspace
 ctrl + shift + {Left,Right}
     id=$(bspc query --nodes --node); bspc node --to-desktop {prev,next}; bspc desktop --focus next; bspc node --focus ${id}
+
+ctrl + shift + l
+    slock
