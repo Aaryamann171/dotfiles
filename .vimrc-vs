@@ -1,16 +1,11 @@
-imap jj <esc>
 set ic
 set clipboard^=unnamed,unnamedplus
 
+" maps jj to esc
+imap jj <esc>
+
 " maps leader to SPACE
 map <Space> <Leader>
-
-" enable spellcheck
-map <Leader>l :setlocal spell! spelllang=en_us<CR>
-
-" splits properly
-set splitbelow
-set splitright
 
 " go to tab by number
 noremap <leader>1 1gt
@@ -23,13 +18,6 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
-
-" moving between tabs sequentially
-nnoremap <C-k> gt<CR>
-nnoremap <C-j> gT<CR>
-
-" open new file
-nnoremap <C-n> :tabedit<CR>
 
 " close file in normal mode
 nnoremap <C-w> :q<CR>
