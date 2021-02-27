@@ -3,6 +3,7 @@ export TERM="xterm-256color"
 
 # path to custom scripts
 PATH="$HOME/my_scripts:$PATH"
+PATH="$HOME/.local/bin:$PATH"
 export PATH
 
 # fixes overwrite bug 
@@ -14,6 +15,11 @@ fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
 PURE_CMD_MAX_EXEC_TIME=3000
+
+# highlights dirs during tab completion
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' menu select
 
 # reloads zsh
 alias update='source ~/.zshrc'
@@ -52,3 +58,7 @@ alias tn='tmux new-session'
 
 # lists all ongoing sessions
 alias tl='tmux list-sessions'
+
+# ctrl + arrow to skip words
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
