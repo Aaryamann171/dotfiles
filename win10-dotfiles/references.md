@@ -22,7 +22,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "closeOnExit" : true,
 "colorScheme" : "Campbell",
 "commandline" : "\"%PROGRAMFILES%\\git\\bin\\bash.exe\" --login -i -l",
-// "commandline" : "\"C:\\Users\\{YOUR_USERNAME}\\Programs\\Git\\bin\\bash.exe\" --login -i -l",
 "cursorColor" : "#FFFFFF",
 "cursorShape" : "bar",
 "fontFace" : "Consolas",
@@ -39,7 +38,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```json
 "actions":
     [
-		//{ "command": { "action": "openSettings", "target": "settingsUI" }, "keys": "ctrl+shift+," },
         { "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
         { "command": "newTab", "keys": "ctrl+t" }
     ]
@@ -48,7 +46,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```json
 "defaults":
         {
-        // Put settings here that you want to apply to all profiles.
 	    "bellStyle": "none",
 		"fontFace" : "Cascadia Mono",
         "fontSize" : 12
