@@ -12,6 +12,7 @@ set clipboard^=unnamed,unnamedplus
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set laststatus=0
 setf dosini
 
 " maps jj to esc
@@ -19,12 +20,6 @@ imap jj <esc>
 
 " maps leader to SPACE
 map <Space> <Leader>
-
-" change cursor to block in normal mode
-let &t_ti.="\e[1 q"
-let &t_SI.="\e[5 q"
-let &t_EI.="\e[1 q"
-let &t_te.="\e[0 q"
 
 " moves the current line down by one line
 map <silent> <C-A-j> :m+1<CR>
@@ -92,6 +87,7 @@ vnoremap <Left> <Nop>
 vnoremap <Right> <Nop>
 vnoremap <Up> <Nop>
 
+" gvim settings
 if has("gui_running")
   set guifont=Consolas:h11:cANSI
   set guioptions-=m  "menu bar
@@ -99,3 +95,8 @@ if has("gui_running")
   set guioptions-=r  "scrollbar set background=dark
 endif
 
+" change caret to block in normal mode
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"

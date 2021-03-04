@@ -46,8 +46,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```json
 "defaults":
         {
-	    "bellStyle": "none",
-		"fontFace" : "Cascadia Mono",
+        "bellStyle": "none",
+        "fontFace" : "Cascadia Mono",
         "fontSize" : 12
         }
 ```
