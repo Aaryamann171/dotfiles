@@ -19,7 +19,7 @@
     },
     {
       "pattern": "*",
-      "passKeys": "T"
+      "passKeys": "ToObB"
     },
     {
       "pattern": "https?://www.primevideo.com/*",
@@ -35,6 +35,22 @@
     },
     {
       "pattern": "https?://www.hackerrank.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.codecademy.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://krunker.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.google.com/*",
+      "passKeys": "/"
+    },
+    {
+      "pattern": "https?://www.udemy.com/*",
       "passKeys": ""
     }
   ],
