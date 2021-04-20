@@ -12,6 +12,8 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 setf dosini
+set t_Co=256
+set t_ut=
 
 " plugins
 call plug#begin('~/.vim/plugged')
@@ -19,13 +21,12 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 " color scheme
-set t_Co=256
-set t_ut=
 let g:codedark_conservative = 1
 colorscheme codedark
 
@@ -34,7 +35,6 @@ imap jj <esc>
 
 " disable `
 map ` <Nop>
-
 
 " maps leader to SPACE
 map <Space> <Leader>
@@ -95,7 +95,7 @@ noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
 " enable spellcheck
-map <Leader>l :setlocal spell! spelllang=en_us<CR>
+map <F5> :setlocal spell! spelllang=en_us<CR>
 
 " remove arrow keys in Command Mode 
 cnoremap <Down> <Nop>
