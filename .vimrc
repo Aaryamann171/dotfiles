@@ -15,6 +15,9 @@ setf dosini
 set t_Co=256
 set t_ut=
 set termguicolors
+set laststatus=2
+set autoread
+set mouse=a
 
 " plugins
 call plug#begin('~/.vim/plugged')
@@ -24,12 +27,16 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
-Plug 'tomasiser/vim-code-dark'
+Plug 'arcticicestudio/nord-vim'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 " color scheme
-let g:codedark_conservative = 1
-colorscheme codedark
+" let g:codedark_conservative = 1
+colorscheme nord 
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ }
 
 " maps jj to esc
 imap jj <esc>
@@ -60,6 +67,9 @@ map <silent> <C-A-j> :m+1<CR>
 
 " moves the current line up by one line
 map <silent> <C-A-k> :m-2<CR>
+
+" copy all lines to the clipboard
+map <silent> <Leader>ca ggVGyy
 
 " splits properly
 set splitbelow
@@ -130,3 +140,9 @@ if executable(s:clip)
         autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
     augroup END
 endif
+
+" compile and run cpp program
+autocmd FileType cpp map <F9> :w<CR>:exec '!g++ -std=c++17 % -O2 -Wall -Wextra -Wno-sign-conversion -Wshadow -DLOCAL && timeout 4s ./a.out<inp.txt>out.txt' shellescape(@%, 1)<CR>
+
+" splits layout for cp
+autocmd VimEnter a.cpp :vsp inp.txt |vertical resize 55| split out.txt
