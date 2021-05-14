@@ -1,0 +1,6 @@
+set nu
+imap jj <esc>
+set background=dark
+set clipboard=unnamedplus
+set ts=4 sw=4 expandtab
+set ai si
