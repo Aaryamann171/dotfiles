@@ -4,3 +4,5 @@ set background=dark
 set clipboard=unnamedplus
 set ts=4 sw=4 expandtab
 set ai si
+set nobackup noundofile noswapfile
+map ` <Nop>
