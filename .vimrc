@@ -17,7 +17,7 @@ set t_ut=
 set termguicolors
 set laststatus=2
 set autoread
-set mouse=a
+set background=dark
 
 " plugins
 call plug#begin('~/.vim/plugged')
@@ -27,15 +27,17 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
-Plug 'arcticicestudio/nord-vim'
+Plug 'wojciechkepka/vim-github-dark'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 
-" color scheme
-" let g:codedark_conservative = 1
-colorscheme nord 
+" colorscheme
+let g:gh_color = "soft"
+colorscheme ghdark
+
+" lightline
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'ghdark',
       \ }
 
 " maps jj to esc
@@ -70,6 +72,9 @@ map <silent> <C-A-k> :m-2<CR>
 
 " copy all lines to the clipboard
 map <silent> <Leader>ca ggVGyy
+
+" new template
+map <silent> <Leader>nt :%d<CR>:.!cat template.cpp<CR>9ggo
 
 " splits properly
 set splitbelow
@@ -142,7 +147,7 @@ if executable(s:clip)
 endif
 
 " compile and run cpp program
-autocmd FileType cpp map <F9> :w<CR>:exec '!g++ -std=c++17 % -O2 -Wall -Wextra -Wno-sign-conversion -Wshadow -DLOCAL && timeout 4s ./a.out<inp.txt>out.txt' shellescape(@%, 1)<CR>
+autocmd FileType cpp map <F9> :wa<CR>:exec '!g++ -std=c++17 % -O2 -Wall -Wextra -Wno-sign-conversion -Wshadow -DLOCAL && timeout 4s ./a.out<inp.txt>out.txt' shellescape(@%, 1)<CR>
 
 " splits layout for cp
 autocmd VimEnter a.cpp :vsp inp.txt |vertical resize 55| split out.txt
