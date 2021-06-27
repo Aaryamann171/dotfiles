@@ -1,16 +1,11 @@
-set nu
+set number
 set belloff=all
 set noruler
-set ic
-set autoindent
-set smartindent
-set nobackup 
-set noundofile
-set noswapfile 
+set ignorecase
+set autoindent smartindent
+set nobackup  noundofile noswapfile
 set clipboard^=unnamed,unnamedplus
-set tabstop=4
-set shiftwidth=4
-set expandtab
+set tabstop=4 shiftwidth=4 expandtab
 setf dosini
 set t_Co=256
 set t_ut=
@@ -43,7 +38,7 @@ let g:lightline = {
 " maps jj to esc
 imap jj <esc>
 
-" disable `
+ " disable `
 map ` <Nop>
 
 " maps leader to SPACE
@@ -149,5 +144,5 @@ endif
 " compile and run cpp program
 autocmd FileType cpp map <F9> :wa<CR>:exec '!g++ -std=c++17 % -O2 -Wall -Wextra -Wno-sign-conversion -Wshadow -DLOCAL && timeout 4s ./a.out<inp.txt>out.txt' shellescape(@%, 1)<CR>
 
-" splits layout for cp
+" splits layout for Competetive Programming
 autocmd VimEnter a.cpp :vsp inp.txt |vertical resize 55| split out.txt
