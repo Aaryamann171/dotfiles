@@ -1,0 +1,25 @@
+# change default prefix 
+unbind C-b
+set-option -g prefix `
+bind ` send-prefix
+
+# index and naming
+set -g base-index 1
+set-option -g renumber-windows on
+
+# increase history
+set -g history-limit 30000
+
+# vim like binds
+setw -g mode-keys vi
+setw -g mode-keys vi
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# split panes using \ and -
+bind \\ split-window -h
+bind - split-window -v
+unbind '"'
+unbind %
