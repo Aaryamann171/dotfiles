@@ -24,6 +24,9 @@ zstyle ':completion:*' menu select
 # reloads zsh
 alias update='source ~/.zshrc'
 
+# use python3 only
+alias python='python3'
+
 # fixes rotation
 alias fr='xrandr -o normal && exit'
 
@@ -35,9 +38,6 @@ alias wr='nmcli radio wifi off && figlet reseting wifi && sleep 2 && nmcli radio
 
 # ls to show colors
 alias ls='ls --color'
-
-# toggle trackpad status
-alias ttp=toggletrackpad
 
 # show colors
 alias print256='for i in {1..256}; do print -P "%F{$i}Color : $i"; done;'
@@ -62,3 +62,9 @@ alias tl='tmux list-sessions'
 # ctrl + arrow to skip words
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
+
+# preserve history
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory
