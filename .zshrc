@@ -68,3 +68,14 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory
+
+# better history management
+setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
+
+# jekyll setup
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
+
+# friendship over with vs code
+alias code=codium
