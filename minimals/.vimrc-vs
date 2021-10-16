@@ -1,8 +1,0 @@
-" maps jj to esc
-imap jj <esc>
-
-" close file in normal mode
-nnoremap <C-w> :q<CR>
-
-" new tab in insert mode
-nnoremap <C-n> :tabe<CR>
