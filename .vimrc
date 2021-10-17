@@ -3,7 +3,7 @@ set belloff=all
 set noruler
 set ignorecase
 set autoindent smartindent
-set nobackup  noundofile noswapfile
+set nobackup noundofile noswapfile
 set clipboard^=unnamed,unnamedplus
 set tabstop=4 shiftwidth=4 expandtab
 setf dosini
@@ -38,7 +38,7 @@ let g:lightline = {
 " maps jj to esc
 imap jj <esc>
 
- " disable `
+" disable `
 map ` <Nop>
 
 " maps leader to SPACE
@@ -59,17 +59,8 @@ let NERDTreeMinimalUI=1
 " hides ^G from view
 let g:NERDTreeNodeDelimiter = "\u00a0"
 
-" moves the current line down by one line
-map <silent> <C-A-j> :m+1<CR>
-
-" moves the current line up by one line
-map <silent> <C-A-k> :m-2<CR>
-
 " copy all lines to the clipboard
 map <silent> <Leader>ca ggVGyy
-
-" new template
-map <silent> <Leader>nt :%d<CR>:.!cat template.cpp<CR>9ggo
 
 " splits properly
 set splitbelow
@@ -105,8 +96,16 @@ if executable(s:clip)
     augroup END
 endif
 
+" === CPP - setup for CP ===
 " compile and run cpp program
+
+" new template
+map <silent> <Leader>nt :%d<CR>:.!cat template.cpp<CR>9ggo
+
 autocmd FileType cpp map <F9> :wa<CR>:exec '!g++ -std=c++17 % -O2 -Wall -Wextra -Wno-sign-conversion -Wshadow -DLOCAL && timeout 4s ./a.out<inp.txt>out.txt' shellescape(@%, 1)<CR>
 
 " splits layout for Competetive Programming
 autocmd VimEnter a.cpp :vsp inp.txt |vertical resize 55| split out.txt
+
+" new template
+map <silent> <Leader>nt :%d<CR>:.!cat template.cpp<CR>9ggo
