@@ -1,12 +1,28 @@
-export editor='vim'
-bind 'TAB:menu-complete'
-bind 'set bell-style none'
-alias gvim="C:\\\Program\ Files\ \(x86\)\\\Vim\\\vim82\\\gvim.exe"
+# aliases
 alias mv="mv -iv"
 alias cp="cp -riv"
 alias mkdir="mkdir -vp"
 alias ls="ls --color=auto"
 alias grep='grep --color=auto'
+
+# tab complete
+bind 'set show-all-if-ambiguous on'
+bind 'TAB':menu-complete
+bind 'set menu-complete-display-prefix on'
+
+# cycle through history based on characters already typed on the line
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
+
+# vi mode
+set -o vi
+bind '"jj":vi-movement-mode'
+export editor='vim'
+
+# disable beep boop
+bind 'set bell-style none'
+
+# history management
 HISTSIZE=1000
 HISTFILESIZE=2000
 HISTCONTROL=erasedups:ignorespace
