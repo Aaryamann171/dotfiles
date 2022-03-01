@@ -1,5 +1,5 @@
 # dotfiles
-various config files
+Various config files, a bit over the place as I am yet to settle on a particular distro and/or workflow.
 
 ### Contents
 - `alacritty` (terminal emulator)
@@ -17,7 +17,9 @@ various config files
 - `zathura` (pdf viewer)
 - `tmux` (terminal multiplexer)
 - `xmodmap` (utility for modifying keymaps)
-- `zsh` (shell)
+- `zsh` and `bash` (shell)
 - `adiaphora` and `nex` (oh-my-zsh themes) 
-- `bash` (gitbash config)
-- `vimrc-vs` (vimrc for vim-mode inside vs code)
+- `vimrc-vs` (vimrc for vim-mode inside vscode/codium)
+
+### TODOS
+- [ ] Manage these dotfiles through something like GNU stow
