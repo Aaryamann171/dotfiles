@@ -1,0 +1,32 @@
+# disables beep boop
+set bell-style none
+
+# mappings for Ctrl-left-arrow and Ctrl-right-arrow for word moving
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+
+# tab complete
+TAB: menu-complete
+set completion-ignore-case on
+
+set editing-mode vi
+
+# vi mode settings
+set keymap vi
+set show-mode-in-prompt on
+set vi-ins-mode-string \1\e[5 q\2
+set vi-cmd-mode-string \1\e[2 q\2
+
+# clear screen in insert/command mode 
+$if mode=vi
+set keymap vi-command
+# these are for vi-command mode
+Control-l: clear-screen
+set keymap vi-insert
+# these are for vi-insert mode
+Control-l: clear-screen
+$endif

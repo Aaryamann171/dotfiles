@@ -1,11 +1,22 @@
 # set vim as default editor
 export editor='vim'
 
-# enable tab complete
-bind 'TAB:menu-complete'
+# tab complete
+bind 'set show-all-if-ambiguous on'
+bind 'TAB':menu-complete
+bind 'set menu-complete-display-prefix on'
 
 # disable beep boop
 bind 'set bell-style none'
+
+# cycle through history based on characters already typed on the line
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
+
+# vi mode
+set -o vi
+bind '"jj":vi-movement-mode'
+export editor='vim'
 
 # handly aliases - qol stuff
 alias mv="mv -iv"
