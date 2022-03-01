@@ -1,11 +1,20 @@
+# set vim as default editor
 export editor='vim'
+
+# enable tab complete
 bind 'TAB:menu-complete'
+
+# disable beep boop
 bind 'set bell-style none'
+
+# handly aliases - qol stuff
 alias mv="mv -iv"
 alias cp="cp -riv"
 alias mkdir="mkdir -vp"
 alias ls="ls --color=auto"
 alias grep='grep --color=auto'
+
+# better history management
 HISTSIZE=1000
 HISTFILESIZE=2000
 HISTCONTROL=erasedups:ignorespace
@@ -48,3 +57,5 @@ function parse_git_dirty {
 		bits="x${bits}"
 	fi
 	if [ "${dirty}" == "0" ]; then
+
+export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\e[34m\]\w\[\e[m\]\[\e[36m\]\`parse_git_branch\`\[\e[m\]\\$ "

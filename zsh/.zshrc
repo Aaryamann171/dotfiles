@@ -2,9 +2,8 @@
 export TERM="xterm-256color"
 
 # path to custom scripts
-PATH="$HOME/my_scripts:$PATH"
-PATH="$HOME/.local/bin:$PATH"
-export PATH
+export PATH="$HOME/my_scripts:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # fixes overwrite bug 
 export LC_ALL=en_US.UTF-8
@@ -30,7 +29,7 @@ alias python='python3'
 # fixes rotation
 alias fr='xrandr -o normal && exit'
 
-# convers webp to png
+# converts webp to png - depends on dwebp
 alias conv='file=$(ls *.webp | head -n 1); dwebp $file -o ${file%%.webp}.png; rm $file'
 
 # restarts wifi
