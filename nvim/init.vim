@@ -14,22 +14,30 @@ set clipboard^=unnamed,unnamedplus
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set mouse=a
 
 " maps leader to SPACE
 map <Space> <Leader>
 
 " plugins
-call plug#begin('~/.vim/plugged')
-Plug 'arcticicestudio/nord-vim'
+call plug#begin()
+Plug 'wojciechkepka/vim-github-dark'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
-Plug 'dikiaap/minimalist'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-colorscheme nord
+" colorscheme
+let g:gh_color = "soft"
+colorscheme ghdark
+
 set termguicolors
 
 " custom status line
@@ -95,9 +103,6 @@ noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize +3<CR>
 noremap <silent> <C-Down> :resize -3<CR>
 
-" remaps jj to esc
-" :imap jj <Esc>
-
 " NERDTree toggle
 nmap <silent> <Leader>n :NERDTreeToggle<CR>
 
@@ -125,3 +130,9 @@ noremap <leader>0 :tablast<cr>
 
 " maps jj to esc
 imap jj <esc>
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>

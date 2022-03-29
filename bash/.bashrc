@@ -1,3 +1,5 @@
+# PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
 # set vim as default editor
 export editor='vim'
 
@@ -68,5 +70,14 @@ function parse_git_dirty {
 		bits="x${bits}"
 	fi
 	if [ "${dirty}" == "0" ]; then
+		bits="!${bits}"
+	fi
+	if [ ! "${bits}" == "" ]; then
+		echo " ${bits}"
+	else
+		echo ""
+	fi
+}
 
 export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\e[34m\]\w\[\e[m\]\[\e[36m\]\`parse_git_branch\`\[\e[m\]\\$ "
+
