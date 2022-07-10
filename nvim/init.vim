@@ -99,6 +99,10 @@ nnoremap <C-l> <C-w>L
 " reopen last tab
 nmap <c-s-t> :vs<bar>:b#<CR>
 
+" tab qol
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+
 " Move visual selection
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
