@@ -9,7 +9,7 @@ setf dosini
 set t_Co=256
 set t_ut=
 set termguicolors
-set laststatus=2
+set laststatus=0
 set autoread
 set background=dark
 set mouse=a
@@ -25,20 +25,31 @@ Plug 'tpope/vim-rhubarb'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
-Plug 'arcticicestudio/nord-vim'
-Plug 'wojciechkepka/vim-github-dark'
-Plug 'itchyny/lightline.vim'
 Plug 'preservim/tagbar'
 Plug 'neoclide/coc.nvim'
+Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'tomasiser/vim-code-dark'
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'BurntSushi/ripgrep'
+Plug 'sharkdp/fd'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-lua/popup.nvim'
+Plug 'sbdchd/neoformat'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
-" colorscheme
-colorscheme ghdark
-let g:gh_color = "soft"
+let g:neoformat_run_all_formatters = 1
+" Enable alignment
+let g:neoformat_basic_format_align = 1
+" Enable tab to spaces conversion
+let g:neoformat_basic_format_retab = 1
+" Enable trimmming of trailing whitespace
+let g:neoformat_basic_format_trim = 1
 
-let g:lightline = {
-      \ 'colorscheme': 'ghdark',
-      \ }
+" colorscheme
+colorscheme codedark
 
 " maps jj to esc
 imap jj <esc>
@@ -47,7 +58,8 @@ imap jj <esc>
 map ` <Nop>
 
 " maps leader to SPACE
-map <Space> <Leader>
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 
 " change cursor to block in normal mode
 let &t_ti.="\e[1 q"
@@ -65,7 +77,7 @@ let NERDTreeMinimalUI=1
 " hides ^G from view
 let g:NERDTreeNodeDelimiter = "\u00a0"
 " change default directory listing
-let g:netrw_liststyle = 3 
+let g:netrw_liststyle = 3
 " load file in seperate split
 let g:netrw_browse_split = 4
 " set winsize of netrw
@@ -112,17 +124,17 @@ map <F5> :setlocal spell! spelllang=en_us<CR>
 
 " Clipboard settings
 let g:clipboard = {
-    \ 'name': 'xsel',
-    \ 'copy': {
-    \     '+': 'xsel -ib',
-    \     '*': 'xsel -ip'
-    \ },
-    \ 'paste': {
-    \     '+': 'xsel -ob',
-    \     '*': 'xsel -op'
-    \ },
-    \ 'cache_enabled': 1
-    \ }
+            \ 'name': 'xsel',
+            \ 'copy': {
+                \     '+': 'xsel -ib',
+                \     '*': 'xsel -ip'
+                \ },
+                \ 'paste': {
+                    \     '+': 'xsel -ob',
+                    \     '*': 'xsel -op'
+                    \ },
+                    \ 'cache_enabled': 1
+                    \ }
 
 " WSL yank support
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
@@ -132,3 +144,25 @@ if executable(s:clip)
         autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
     augroup END
 endif
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Using Lua functions
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+" autoformat on save
+augroup fmt
+    autocmd!
+    autocmd BufWritePre * undojoin | Neoformat
+augroup END
+
+lua << EOF
+require("bufferline").setup{}
+EOF
