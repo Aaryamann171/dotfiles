@@ -9,7 +9,7 @@ setf dosini
 set t_Co=256
 set t_ut=
 set termguicolors
-set laststatus=0
+" set laststatus=0
 set autoread
 set background=dark
 set mouse=a
@@ -24,7 +24,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'jiangmiao/auto-pairs'
-Plug 'preservim/nerdtree'
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'preservim/tagbar'
 Plug 'neoclide/coc.nvim'
 Plug 'tyrannicaltoucan/vim-deep-space'
@@ -38,6 +38,9 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-lua/popup.nvim'
 Plug 'sbdchd/neoformat'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 let g:neoformat_run_all_formatters = 1
@@ -49,8 +52,8 @@ let g:neoformat_basic_format_retab = 1
 let g:neoformat_basic_format_trim = 1
 
 " colorscheme
-colorscheme codedark
-
+colorscheme deep-space
+highlight Normal ctermbg=NONE guibg=NONE
 " maps jj to esc
 imap jj <esc>
 
@@ -71,11 +74,9 @@ let &t_te.="\e[0 q"
 nmap <silent> <Leader>t :TagbarToggle<CR>
 
 " NERDTree Settings
-nmap <silent> <Leader>n :NERDTreeToggle<CR>
+nmap <silent> <Leader>n :NvimTreeToggle<CR>
 " start NERDTree in minimal UI mode (No help lines)
-let NERDTreeMinimalUI=1
-" hides ^G from view
-let g:NERDTreeNodeDelimiter = "\u00a0"
+
 " change default directory listing
 let g:netrw_liststyle = 3
 " load file in seperate split
@@ -162,6 +163,15 @@ augroup fmt
     autocmd!
     autocmd BufWritePre * undojoin | Neoformat
 augroup END
+
+let g:neoformat_cpp_clangformat = {
+            \ 'exe': 'clang-format',
+            \ 'args': ['--style="{IndentWidth: 4}"']
+            \}
+let g:neoformat_enabled_cpp = ['clangformat']
+let g:neoformat_enabled_c = ['clangformat']
+
+lua require("nvim-tree").setup()
 
 lua << EOF
 require("bufferline").setup{}
