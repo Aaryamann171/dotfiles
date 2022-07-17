@@ -158,12 +158,6 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
-" autoformat on save
-augroup fmt
-    autocmd!
-    autocmd BufWritePre * undojoin | Neoformat
-augroup END
-
 let g:neoformat_cpp_clangformat = {
             \ 'exe': 'clang-format',
             \ 'args': ['--style="{IndentWidth: 4}"']
