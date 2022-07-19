@@ -1,4 +1,4 @@
-set number
+set nu rnu
 set belloff=all
 set noruler
 set ignorecase
@@ -9,12 +9,12 @@ setf dosini
 set t_Co=256
 set t_ut=
 set termguicolors
-" set laststatus=0
 set autoread
 set background=dark
 set mouse=a
 set wildmenu
 set nohlsearch
+set cursorline
 
 " plugins
 call plug#begin('~/.vim/plugged')
@@ -54,6 +54,7 @@ let g:neoformat_basic_format_trim = 1
 " colorscheme
 colorscheme deep-space
 highlight Normal ctermbg=NONE guibg=NONE
+
 " maps jj to esc
 imap jj <esc>
 
@@ -71,9 +72,9 @@ let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
 
 " Tagbar toggle
-nmap <silent> <Leader>t :TagbarToggle<CR>
+nmap <silent> <Leader>v :TagbarToggle<CR>
 
-" NERDTree Settings
+" Nvim Tree Toggle
 nmap <silent> <Leader>n :NvimTreeToggle<CR>
 " start NERDTree in minimal UI mode (No help lines)
 
@@ -170,3 +171,9 @@ lua require("nvim-tree").setup()
 lua << EOF
 require("bufferline").setup{}
 EOF
+
+autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++17 -O2 -Wall % -o %:r && %:r <CR>
+autocmd FileType cpp nnoremap <leader>r :!g++ -std=c++17 % && ./a.out<CR>
+autocmd FileType cpp nnoremap <leader>t :0r template.cpp<CR>
+autocmd FileType cpp nnoremap <leader>y :%y<CR>
+
