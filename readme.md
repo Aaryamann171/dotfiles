@@ -26,7 +26,7 @@ Various config files dump.
 
 ### Current Setup
 Lately, I have been using WSL2 (Ubuntu 22.04) for dev work on my personal system. I finally bit the bullet and setup Neovim for development. All the cool kids seem to be using it. I switched back to zsh, without oh-my-zsh (bloat bad). Everything runs inside a tmux session.
-I also use VS Code and PyCharm time to time with vim mode.
+I also use VS Code and PyCharm time to time with vim mode. I also tried Helix recently, and fell in love with it immediately, might switch over to it in the future.
 
 ### TODOS
 - [ ] Manage these dotfiles through something like GNU stow
