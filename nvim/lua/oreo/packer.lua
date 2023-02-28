@@ -47,6 +47,7 @@ return require('packer').startup(function(use)
   }
   }
   use ('jose-elias-alvarez/null-ls.nvim')
+  use ('tpope/vim-fugitive')
   use {
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} 
