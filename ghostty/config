@@ -1,3 +1,4 @@
+# Colors
 palette = 0=#1b1e28
 palette = 1=#d0679d
 palette = 2=#5de4c7
@@ -14,15 +15,25 @@ palette = 12=#89ddff
 palette = 13=#d2a6ff
 palette = 14=#add7ff
 palette = 15=#ffffff
-background = 1b1e28
-foreground = a6accd
+background = #1b1e28
+foreground = #a6accd
 cursor-color = e4f0fb
-selection-background = 2a2e3f
-selection-foreground = f8f8f2
-font-size = 16
-cursor-style = block
-shell-integration = zsh
-window-save-state = always
-quit-after-last-window-closed=true
-font-family = JetBrainsMono Nerd Font
+selection-background = #2a2e3f
+selection-foreground = #f8f8f2
 
+# Cursor
+shell-integration-features = no-cursor
+cursor-style = block
+
+# Shell
+shell-integration = zsh
+
+# Font
+font-size = 16
+font-family = JetBrainsMono Nerd Font
+font-feature = -calt, -liga, -dlig
+
+# Behavior
+window-save-state = always
+quit-after-last-window-closed = true
+confirm-close-surface = false
